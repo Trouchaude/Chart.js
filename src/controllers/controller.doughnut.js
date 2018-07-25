@@ -101,7 +101,12 @@ defaults._set('doughnut', {
 			},
 			label: function(tooltipItem, data) {
 				var dataLabel = data.labels[tooltipItem.index];
-				var value = ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+				let res = 0;
+				for (var i = 0; i < data.datasets[tooltipItem.datasetIndex].data.length; i++) {
+					res += data.datasets[tooltipItem.datasetIndex].data[i];
+				}
+
+				var value = ': ' + ((data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] * 100) / res).toFixed(2) + '%';
 
 				if (helpers.isArray(dataLabel)) {
 					// show value on first line of multiline label
