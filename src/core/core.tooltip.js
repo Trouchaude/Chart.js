@@ -410,6 +410,8 @@ function determineAlignment(tooltip, size) {
 		}
 	}
 
+	xAlign = xAlign === 'right' ? 'left' : 'right';
+	
 	var opts = tooltip._options;
 	return {
 		xAlign: opts.xAlign ? opts.xAlign : xAlign,
