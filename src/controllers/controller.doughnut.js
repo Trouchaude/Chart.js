@@ -108,7 +108,7 @@ defaults._set('doughnut', {
 
 				//var value = ': ' + ((data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] * 100) / res).toFixed(2) + '%';
 
-				dataLabel = ((data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] * 100) / res).toFixed(1) + '%';
+				dataLabel = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] === 0 ? '0%' : ((data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] * 100) / res).toFixed(1) + '%';
 				
 				// if (helpers.isArray(dataLabel)) {
 				// 	// show value on first line of multiline label
